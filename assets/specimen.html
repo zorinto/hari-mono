@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Hari Mono specimen</title>
+<!-- Renders assets/specimen.png from the fonts in dist/ (Chrome headless, 1200x640 at 2x). -->
+<style>
+@font-face { font-family: H; src: url("../dist/ttf-unhinted/HariMono-Regular.ttf"); font-weight: 400; }
+@font-face { font-family: H; src: url("../dist/ttf-unhinted/HariMono-Bold.ttf"); font-weight: 700; }
+@font-face { font-family: H; src: url("../dist/ttf-unhinted/HariMono-Italic.ttf"); font-weight: 400; font-style: italic; }
+body { margin: 0; padding: 44px 52px; background: #0b0d10; color: #e6e1d6; font-family: H; }
+h1 { margin: 0; font-size: 64px; font-weight: 700; letter-spacing: -1px; }
+.sub { color: #8b949e; font-size: 17px; margin: 6px 0 28px; }
+.glyphs { font-size: 25px; line-height: 1.45; margin-bottom: 26px; }
+pre { margin: 0; font-family: H; font-size: 17px; line-height: 1.55; background: #12161b; border: 1px solid #222a33; border-radius: 10px; padding: 18px 22px; }
+.box { display: block; line-height: 1.25; margin-top: 4px; }
+.k { color: #ff8f73; } .s { color: #a5d6a7; } .c { color: #6e7681; font-style: italic; } .f { color: #e6c07b; font-weight: 700; } .n { color: #79c0ff; }
+</style>
+<h1>Hari Mono</h1>
+<div class="sub">Regular · <b>Bold</b> · <i>Italic</i> · monospaced, no ligatures, built with Iosevka</div>
+<div class="glyphs">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 0O 1lI| {}[]() &lt;=&gt; ~^`_ £$€₹ @#%&amp;*</div>
+<pre><span class="c">// settle invoices older than the cut-off</span>
+<span class="k">export async function</span> <span class="f">overdue</span>(days = <span class="n">30</span>) {
+  <span class="k">const</span> rows = <span class="k">await</span> db.query(<span class="s">`SELECT * FROM inv WHERE age &gt;= ${days}`</span>);
+  <span class="k">return</span> rows.filter(r =&gt; r.paid !== <span class="k">true</span> &amp;&amp; r.total &gt; <span class="n">0</span>);
+}
+<span class="c">$</span> git log --oneline -3 | grep -v "wip" &gt; out.txt &amp;&amp; echo ~/done
+<span class="box">┌──────────┬─────────┐
+│ ✓ passed │   1,284 │
+└──────────┴─────────┘</span></pre>

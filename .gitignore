@@ -1,0 +1,9 @@
+# Private design study files. Never publish.
+compare/
+
+# Build outputs and caches
+dist/
+.cache/
+__pycache__/
+.ruff_cache/
+.DS_Store
