@@ -15,7 +15,7 @@ A monospaced font for terminals and code editors, built with [Iosevka](https://g
 
 ## Downloads
 
-Grab the latest archives from the [Releases](https://github.com/vimalhari/hari-mono/releases) page.
+Grab the latest archives from the [Releases](https://github.com/zorinto/hari-mono/releases) page.
 
 | Archive | Contents | Use it for |
 |---|---|---|

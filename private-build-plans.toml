@@ -158,10 +158,10 @@ symbolMid = 313
 copyright = "Copyright 2015-2026 Renzhi Li (Iosevka); Copyright 2025 Ahmed Hatem (Ioskeley Mono); Copyright 2026 Vimal Hari (Hari Mono)"
 designer = "Vimal Hari"
 manufacturer = "Vimal Hari"
-urlDesigner = "https://github.com/vimalhari/hari-mono"
+urlDesigner = "https://github.com/zorinto/hari-mono"
 licence = "This Font Software is licensed under the SIL Open Font License, Version 1.1."
 licenceURL = "https://openfontlicense.org"
-version = "1.0.0"
+version = "1.0.1"
 vendorIdTag = "HARI"
 
 # Donor build at width 500: narrower symbols at the same stroke weight, used only by postprocess.py.
