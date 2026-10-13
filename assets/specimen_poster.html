@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hari Mono Specimen (Dark)</title>
+<style>
+@font-face {
+  font-family: 'Hari Mono';
+  src: url('../dist/ttf-unhinted/HariMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Hari Mono';
+  src: url('../dist/ttf-unhinted/HariMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Hari Mono';
+  src: url('../dist/ttf-unhinted/HariMono-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Hari Mono';
+  src: url('../dist/ttf-unhinted/HariMono-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #07090e;
+  background-image: 
+            radial-gradient(circle at 14% 15%, rgba(230, 122, 44, 0.12) 0%, transparent 42%),
+            radial-gradient(circle at 86% 22%, rgba(56, 189, 248, 0.09) 0%, transparent 45%),
+            radial-gradient(circle at 50% 85%, rgba(168, 85, 247, 0.07) 0%, transparent 48%),
+            radial-gradient(circle, rgba(255, 255, 255, 0.045) 1px, transparent 1px)
+        ;
+  background-size: auto, auto, auto, 24px 24px;
+  color: #e6edf3;
+  font-family: 'Hari Mono', monospace;
+  width: 2560px;
+  height: 1440px;
+  padding: 48px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.18);
+  padding-bottom: 24px;
+}
+
+.title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(230, 122, 44, 0.15);
+  color: #ff9e3b;
+  border: 1px solid rgba(230, 122, 44, 0.35);
+}
+
+.badge-second {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.badge-third {
+  background: rgba(126, 231, 135, 0.12);
+  color: #7ee787;
+  border: 1px solid rgba(126, 231, 135, 0.3);
+}
+
+h1 {
+  font-size: 76px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #e6edf3;
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #8b949e;
+  letter-spacing: 0.2px;
+}
+
+.header-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  text-align: right;
+}
+
+.meta-spec {
+  font-size: 16px;
+  color: #e6edf3;
+}
+
+.meta-spec b {
+  color: #ff9e3b;
+}
+
+.meta-note {
+  font-size: 14px;
+  color: #8b949e;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1460px 1fr;
+  gap: 36px;
+  flex: 1;
+  margin: 24px 0;
+}
+
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(12, 16, 22, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.window-header {
+  background: rgba(18, 23, 31, 0.96);
+  border-bottom: 1px solid rgba(127, 127, 127, 0.12);
+  padding: 11px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.traffic-lights {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.tab-bar {
+  display: flex;
+  gap: 4px;
+}
+
+.tab {
+  font-size: 13px;
+  padding: 5px 14px;
+  border-radius: 6px;
+  color: #8b949e;
+}
+
+.tab.active {
+  background: #1f2633;
+  color: #e6edf3;
+  font-weight: 700;
+  border: 1px solid rgba(127, 127, 127, 0.15);
+}
+
+.window-title {
+  font-size: 13px;
+  color: #8b949e;
+}
+
+.editor-wrap {
+  display: flex;
+  padding: 20px 22px;
+  font-size: 15.5px;
+  line-height: 1.62;
+}
+
+.line-numbers {
+  color: #484f58;
+  user-select: none;
+  padding-right: 20px;
+  text-align: right;
+  border-right: 1px solid rgba(127, 127, 127, 0.12);
+  font-size: 14.5px;
+}
+
+.code-content {
+  padding-left: 22px;
+  flex: 1;
+  overflow: hidden;
+}
+
+pre {
+  font-family: 'Hari Mono', monospace;
+}
+
+.k { color: #ff7b72; font-weight: 700; }
+.s { color: #a5d6a7; }
+.c { color: #8b949e; font-style: italic; }
+.f { color: #d2a8ff; font-weight: 700; }
+.n { color: #79c0ff; }
+.t { color: #ffa657; }
+.p { color: #ffc66d; }
+.op { color: #e6edf3; }
+
+.terminal-body {
+  padding: 18px 24px;
+  font-size: 14.5px;
+  line-height: 1.48;
+  background: #080a0f;
+  color: #e6edf3;
+}
+
+.prompt {
+  color: #58a6ff;
+  margin-bottom: 10px;
+  font-size: 14.5px;
+}
+
+.prompt-cmd {
+  color: #f0f6fc;
+}
+
+.box-table {
+  color: #79c0ff;
+  line-height: 1.25;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.term-stat {
+  margin-top: 10px;
+  display: flex;
+  gap: 28px;
+  color: #8b949e;
+  font-size: 13px;
+}
+
+.stat-val {
+  color: #7ee787;
+  font-weight: 700;
+}
+
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.lab-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #8b949e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lab-title::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #ff9e3b;
+  border-radius: 2px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.feature-box {
+  background: rgba(16, 20, 27, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.glyph-showcase {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1;
+  color: #e6edf3;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.accent { color: #ff9e3b; }
+.cyan { color: #38bdf8; }
+.green { color: #7ee787; }
+.purple { color: #d2a8ff; }
+
+.glyph-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #e6edf3;
+}
+
+.glyph-desc {
+  font-size: 12px;
+  color: #8b949e;
+  line-height: 1.42;
+}
+
+.weights-box {
+  background: rgba(16, 20, 27, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.weight-row {
+  display: flex;
+  align-items: baseline;
+  font-size: 14.5px;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.1);
+  padding-bottom: 6px;
+  gap: 14px;
+}
+
+.weight-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.weight-tag {
+  font-size: 11.5px;
+  color: #ff9e3b;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  min-width: 105px;
+  font-weight: 700;
+}
+
+.weight-sample {
+  color: #e6edf3;
+  flex: 1;
+}
+
+.symbols-box {
+  background: rgba(16, 20, 27, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.symbols-grid {
+  font-size: 18.5px;
+  line-height: 1.45;
+  color: #38bdf8;
+  letter-spacing: 2px;
+}
+
+.alphabet-box {
+  background: rgba(16, 20, 27, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.alpha-line {
+  font-size: 13.5px;
+  color: #c9d1d9;
+  letter-spacing: 1.8px;
+}
+
+.footer {
+  border-top: 1px solid rgba(127, 127, 127, 0.18);
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #8b949e;
+}
+
+.footer-left {
+  display: flex;
+  gap: 22px;
+}
+
+.footer-right {
+  color: #ff9e3b;
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-wrap">
+      <div class="badge-row">
+        <span class="badge">Hari Mono Typeface</span>
+        <span class="badge badge-second">600 FUnit Pitch</span>
+        <span class="badge badge-third">Pure WYSIWYG Code</span>
+      </div>
+      <h1>Hari Mono</h1>
+      <div class="subtitle">A spatial-efficient monospace font family engineered for programming and technical prose.</div>
+    </div>
+    <div class="header-meta">
+      <div class="meta-spec">Built with <b>Iosevka</b> in the spirit of <b>Berkeley Mono</b></div>
+      <div class="meta-note">Version 1.0.1 (2026) : Designed and authored by Vimal Hari</div>
+    </div>
+  </div>
+
+  <div class="main-grid">
+
+    <div class="left-col">
+
+      <div class="card">
+        <div class="window-header">
+          <div class="traffic-lights">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+          </div>
+          <div class="tab-bar">
+            <div class="tab active">stream_engine.rs</div>
+            <div class="tab">telemetry.rs</div>
+            <div class="tab">config.toml</div>
+          </div>
+          <div class="window-title">Hari Mono Regular 15.5px : Rust Editor Buffer</div>
+        </div>
+        <div class="editor-wrap">
+          <div class="line-numbers">
+01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19
+          </div>
+          <div class="code-content">
+<pre><span class="c">// Spatial efficiency: 600 units per cell preserves geometric rhythm across deep nesting</span>
+<span class="k">pub async fn</span> <span class="f">process_telemetry_batch</span>&lt;<span class="t">'a</span>, <span class="t">T</span>&gt;(
+    <span class="p">buffer</span>: <span class="op">&amp;</span><span class="t">'a mut</span> <span class="t">StreamBuffer</span>&lt;<span class="t">T</span>, <span class="n">600</span>&gt;,
+    <span class="p">threshold</span>: <span class="t">f64</span>,
+) -&gt; <span class="t">Result</span>&lt;<span class="t">BatchSummary</span>, <span class="t">EngineError</span>&gt; 
+<span class="k">where</span>
+    <span class="t">T</span>: <span class="t">TelemetryEvent</span> + <span class="t">Send</span> + <span class="t">Sync</span>,
+{
+    <span class="k">let</span> <span class="p">valid_entries</span> = buffer.filter(|<span class="p">e</span>| e.latency_ms &lt;= threshold &amp;&amp; e.status !== <span class="n">500</span>);
+    <span class="k">let</span> <span class="p">sample_id</span>: <span class="t">u64</span> = <span class="n">0x7F00_10A3</span>; <span class="c">// Dotted zero: 0 vs O disambiguation</span>
+
+    <span class="k">match</span> buffer.flush_pipeline(<span class="n">32</span>, <span class="p">sample_id</span>).<span class="k">await</span> {
+        <span class="t">Ok</span>(<span class="p">stats</span>) <span class="k">if</span> stats.processed &gt;= <span class="n">10_000</span> =&gt; {
+            <span class="k">let</span> <span class="p">q</span> = (<span class="p">stats</span>.ratio * <span class="n">100.0</span>).round() <span class="k">as</span> <span class="t">u32</span>; <span class="c">// Flat-topped 3</span>
+            <span class="t">Ok</span>(<span class="t">BatchSummary</span> { total: stats.processed, health_score: q, active: <span class="k">true</span> })
+        }
+        <span class="t">Ok</span>(<span class="p">stats</span>) =&gt; <span class="t">Ok</span>(<span class="t">BatchSummary</span>::from_partial(stats)),
+        <span class="t">Err</span>(<span class="p">err</span>) =&gt; <span class="t">Err</span>(<span class="t">EngineError</span>::PipelineFault(err)),
+    }
+}
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="window-header">
+          <div class="traffic-lights">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+          </div>
+          <div class="window-title">ghostty : 108x16 : zsh : Hari Mono 14.5px</div>
+          <div class="window-title" style="color: #7ee787;">● session active</div>
+        </div>
+        <div class="terminal-body">
+          <div class="prompt">vimal@zorinto ➜ ~/hari-mono [git:main] ❯ <span class="prompt-cmd">cargo bench --bench character_matrix</span></div>
+          <pre class="box-table">┌─────────────────────────────┬──────────────┬─────────────┬────────────┐
+│ BENCHMARK METRIC            │ MEASUREMENT  │ LATENCY p99 │ CELL FIT   │
+├─────────────────────────────┼──────────────┼─────────────┼────────────┤
+│ Cell geometry validation    │  600.00 UPM  │    0.04 ms  │  UNIFORM   │
+│ Disambiguation quartet      │ 100% distinct│    0.08 ms  │  OPTIMAL   │
+│ Box drawing alignment       │  Seamless    │    0.02 ms  │  PERFECT   │
+│ Symbol stroke weight fit    │  17 symbols  │    0.11 ms  │  BALANCED  │
+└─────────────────────────────┴──────────────┴─────────────┴────────────┘</pre>
+          <div class="term-stat">
+            <div>TEST SUITE: <span class="stat-val">34 PASSED</span></div>
+            <div>STYLES: <span class="stat-val">4 ACTIVE</span></div>
+            <div>NERD FONTS: <span class="stat-val">10,000+ ICONS</span></div>
+            <div>LIGATURES: <span class="stat-val">STRICT OFF (PURE WYSIWYG)</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right-col">
+
+      <div class="lab-title">Typographic Anatomy and Disambiguation</div>
+
+      <div class="feature-grid">
+
+        <div class="feature-box">
+          <div class="glyph-showcase">
+            <span class="accent">0</span> <span style="font-size:24px; color:#8b949e;">vs</span> <span class="cyan">O</span>
+          </div>
+          <div class="glyph-label">Dotted Zero Disambiguation</div>
+          <div class="glyph-desc">Clean internal dot prevents critical bugs between numeric 0 and capital letter O.</div>
+        </div>
+
+        <div class="feature-box">
+          <div class="glyph-showcase">
+            <span class="accent">1</span> <span class="cyan">l</span> <span class="green">I</span> <span class="purple">|</span>
+          </div>
+          <div class="glyph-label">Disambiguation Quartet</div>
+          <div class="glyph-desc">Distinct top serif on 1, curved bottom hook on l, serifs on I, and tall pipe |.</div>
+        </div>
+
+        <div class="feature-box">
+          <div class="glyph-showcase">
+            <span class="accent">g</span> <span style="font-size:24px; color:#8b949e;">&amp;</span> <span class="cyan">3</span>
+          </div>
+          <div class="glyph-label">Single-Storey g and Flat 3</div>
+          <div class="glyph-desc">Open bowl g provides immediate legibility; flat-topped 3 gives architectural precision.</div>
+        </div>
+
+        <div class="feature-box">
+          <div class="glyph-showcase" style="font-size:32px;">
+            <span class="accent">!==</span> <span class="cyan">=&gt;</span> <span class="green">-&gt;</span>
+          </div>
+          <div class="glyph-label">Strict WYSIWYG Operators</div>
+          <div class="glyph-desc">No ligatures. Arrows and equality operators stay as typed for true code fidelity.</div>
+        </div>
+
+      </div>
+
+      <div class="weights-box">
+        <div class="lab-title" style="margin-bottom:4px;">Family Weights and Slopes</div>
+
+        <div class="weight-row">
+          <div class="weight-tag">Regular</div>
+          <div class="weight-sample" style="font-weight:400; font-style:normal;">
+            The quick brown fox jumps over the lazy dog. 0123456789
+          </div>
+        </div>
+
+        <div class="weight-row">
+          <div class="weight-tag">Bold</div>
+          <div class="weight-sample" style="font-weight:700; font-style:normal;">
+            Sphinx of black quartz, judge my vow. ABCDEFGHIJKLMNOPQRSTUVWXYZ
+          </div>
+        </div>
+
+        <div class="weight-row">
+          <div class="weight-tag">Italic</div>
+          <div class="weight-sample" style="font-weight:400; font-style:italic;">
+            Slanted letterforms preserve identical character width and reading cadence.
+          </div>
+        </div>
+
+        <div class="weight-row">
+          <div class="weight-tag">Bold Italic</div>
+          <div class="weight-sample" style="font-weight:700; font-style:italic;">
+            High-contrast visual emphasis in terminal prompts and headers.
+          </div>
+        </div>
+      </div>
+
+      <div class="symbols-box">
+        <div class="lab-title" style="margin-bottom:4px;">Symbol Fit and Mathematical Palette</div>
+        <div class="symbols-grid">
+          λ π ∑ ∫ √ ≈ ≠ ≤ ≥ ± ∞ ∂ ∆ ∇ µ α β γ ⊕ ⊗ ∩ ∪ ∈ ∉ ⊂ ⊃
+        </div>
+        <div class="symbols-grid" style="color: #ff9e3b; font-size: 16.5px; margin-top: 3px;">
+          ┌ ┐ └ ┘ ├ ┤ ┬ ┴ ┼ │ ─ ═ ║ ▲ ▼ ◀ ▶ ░ ▒ ▓ █ ◆ ● £ $ € ¥ ₹ ¢ ₿
+        </div>
+        <div class="symbols-grid" style="color: #8b949e; font-size: 15.5px; margin-top: 2px;">
+          () [] {} &lt;&gt; ` ~ ^ _ @ # % &amp; * / \ | ! ? ; : " '
+        </div>
+      </div>
+
+      <div class="alphabet-box">
+        <div class="lab-title" style="margin-bottom:4px;">Character Set Cascade</div>
+        <div class="alpha-line">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+        <div class="alpha-line" style="color: #8b949e;">abcdefghijklmnopqrstuvwxyz</div>
+        <div class="alpha-line" style="color: #ff9e3b;">0123456789 0O 1lI| {}[]() &lt;=&gt; ~^`_</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div><b>Typeface:</b> Hari Mono</div>
+      <div><b>Format:</b> TrueType (Hinted and Unhinted), WOFF2, Nerd Font</div>
+      <div><b>Spacing:</b> Monospaced (600 FUnit cell)</div>
+      <div><b>Licence:</b> SIL Open Font License 1.1</div>
+    </div>
+    <div class="footer-right">
+      github.com/zorinto/hari-mono
+    </div>
+  </div>
+
+</body>
+</html>
