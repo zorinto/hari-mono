@@ -25,6 +25,19 @@ Grab the latest archives from the [Releases](https://github.com/zorinto/hari-mon
 
 ## Installing
 
+### macOS via Homebrew
+
+```sh
+brew tap zorinto/fonts
+brew trust zorinto/fonts
+brew install --cask font-hari-mono
+
+# or for the Nerd Font variant with shell/IDE glyphs:
+brew install --cask font-hari-mono-nerd-font
+```
+
+### Manual Installation
+
 - **macOS:** double-click each `.ttf` and choose Install, or copy them to `~/Library/Fonts`.
 - **Windows:** use the files in `Hinted`. Select them all, right-click and choose Install.
 - **Linux:** copy them to `~/.local/share/fonts`, then run `fc-cache -f`.
