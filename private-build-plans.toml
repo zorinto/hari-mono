@@ -110,6 +110,16 @@ shape = 400
 menu = 400
 css = 400
 
+[buildPlans.HariMono.weights.Medium]
+shape = 500
+menu = 500
+css = 500
+
+[buildPlans.HariMono.weights.SemiBold]
+shape = 600
+menu = 600
+css = 600
+
 [buildPlans.HariMono.weights.Bold]
 shape = 700
 menu = 700
@@ -161,7 +171,7 @@ manufacturer = "Vimal Hari"
 urlDesigner = "https://github.com/zorinto/hari-mono"
 licence = "This Font Software is licensed under the SIL Open Font License, Version 1.1."
 licenceURL = "https://openfontlicense.org"
-version = "1.0.1"
+version = "1.1.0"
 vendorIdTag = "HARI"
 
 # Donor build at width 500: narrower symbols at the same stroke weight, used only by postprocess.py.

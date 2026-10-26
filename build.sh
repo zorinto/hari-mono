@@ -9,7 +9,7 @@ CACHE=${CACHE:-$HERE/.cache}
 IOSEVKA=$CACHE/iosevka-$IOSEVKA_REF
 PATCHER=$CACHE/nerd-fonts-$NERD_REF
 OUT=$HERE/dist
-STYLES="Regular Bold Italic BoldItalic"
+STYLES="Regular Italic Medium MediumItalic SemiBold SemiBoldItalic Bold BoldItalic"
 
 ots() { uv run --with opentype-sanitizer python -m ots "$1" /dev/null > /dev/null || { echo "OTS rejected $1" >&2; exit 1; }; }
 
@@ -27,7 +27,12 @@ DONOR=$IOSEVKA/dist/HariMonoDonor/TTF-Unhinted
 # 2. Fit symbols, then derive the hinted TTF and WOFF2 from the fitted font.
 rm -rf "$OUT" && mkdir -p "$OUT/ttf-unhinted" "$OUT/ttf" "$OUT/woff2" "$OUT/nerd-font"
 for style in $STYLES; do
-	case $style in Bold*) weight=bold; upright=$BUILT/HariMono-Bold.ttf ;; *) weight=regular; upright=$BUILT/HariMono-Regular.ttf ;; esac
+	case $style in
+		Bold*) weight=bold; upright=$BUILT/HariMono-Bold.ttf ;;
+		SemiBold*) weight=semibold; upright=$BUILT/HariMono-SemiBold.ttf ;;
+		Medium*) weight=medium; upright=$BUILT/HariMono-Medium.ttf ;;
+		*) weight=regular; upright=$BUILT/HariMono-Regular.ttf ;;
+	esac
 	case $style in *Italic) slant=$upright ;; *) slant= ;; esac
 	fitted=$OUT/ttf-unhinted/HariMono-$style.ttf
 	uv run --with fonttools "$HERE/postprocess.py" "$BUILT/HariMono-$style.ttf" "$DONOR/HariMonoDonor-$style.ttf" \

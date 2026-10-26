@@ -25,7 +25,7 @@ EOF
 
 mkdir -p "$STAGE/HariMono-Web"
 cp "$OUT"/woff2/*.woff2 "$STAGE/HariMono-Web/"
-for style in Regular:400:normal Bold:700:normal Italic:400:italic BoldItalic:700:italic; do
+for style in Regular:400:normal Italic:400:italic Medium:500:normal MediumItalic:500:italic SemiBold:600:normal SemiBoldItalic:600:italic Bold:700:normal BoldItalic:700:italic; do
 	IFS=: read -r name weight slope <<EOF
 $style
 EOF

@@ -11,7 +11,7 @@ A monospaced font for terminals and code editors, built with [Iosevka](https://g
 - A single-storey `g`, a flat-topped `3` and flat-sided brackets.
 - No ligatures. What you type is what you see: `=>`, `>=` and `!==` stay as typed.
 - Terminal spacing, so box-drawing characters and arrows fill the cell exactly.
-- Four styles: Regular, Bold, Italic and Bold Italic. The italics are slanted versions of the upright letters, so code reads the same in both.
+- Eight styles: Regular (400), Medium (500), SemiBold (600), Bold (700), and their matching 9.4-degree slanted italics so code reads identically in both.
 
 ## Downloads
 
